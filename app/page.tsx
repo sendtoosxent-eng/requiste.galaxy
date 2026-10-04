@@ -49,7 +49,7 @@ import {
 const requests = [
   { id: 'GIS-REQ-2026-00125', title: '10 Laptop Computers', requester: 'Daniel Kato', department: 'ICT', date: '03 Oct 2026 · 10:35 AM', amount: 'UGX 28,500,000', status: 'Pending Principal Approval', priority: 'High', color: 'amber' },
   { id: 'GIS-REQ-2026-00124', title: 'Science Laboratory Chemicals', requester: 'Joseph Mugisha', department: 'Science', date: '03 Oct 2026 · 09:12 AM', amount: 'UGX 1,850,000', status: 'Pending Finance Approval', priority: 'Normal', color: 'blue' },
-  { id: 'GIS-REQ-2026-00127', title: 'Football & Basketball Equipment', requester: 'Robert Ochieng', department: 'Sports', date: '01 Oct 2026 · 03:44 PM', amount: 'UGX 3,750,000', status: 'In Procurement', priority: 'High', color: 'violet' },
+  { id: 'GIS-REQ-2026-00127', title: 'Football & Basketball Equipment', requester: 'Achileo Mulalira', department: 'Sports', date: '01 Oct 2026 · 03:44 PM', amount: 'UGX 3,750,000', status: 'In Procurement', priority: 'High', color: 'violet' },
   { id: 'GIS-REQ-2026-00126', title: 'Printer Toner and A4 Paper', requester: 'Sarah Namusoke', department: 'Administration', date: '02 Oct 2026 · 02:08 PM', amount: 'UGX 1,240,000', status: 'Approved', priority: 'Normal', color: 'green' },
   { id: 'GIS-REQ-2026-00123', title: 'Boarding Mattresses', requester: 'Grace Atim', department: 'Boarding', date: '30 Sep 2026 · 11:20 AM', amount: 'UGX 8,920,000', status: 'Completed', priority: 'Urgent', color: 'slate' },
 ]
@@ -75,7 +75,7 @@ type DemoUser = {
 const demoUsers: Record<DemoRole, DemoUser> = {
   'Teacher / Requester': { name: 'Joseph Mugisha', email: 'joseph.mugisha@galaxy-demo.school', role: 'Teacher / Requester', department: 'Science', initials: 'JO' },
   'Department Head': { name: 'Mary Akello', email: 'mary.akello@galaxy-demo.school', role: 'Department Head', department: 'Science', initials: 'MA' },
-  'Operations / Procurement': { name: 'Robert Ochieng', email: 'robert.ochieng@galaxy-demo.school', role: 'Operations / Procurement', department: 'Procurement', initials: 'RO' },
+  'Operations / Procurement': { name: 'Achileo Mulalira', email: 'Achileo.Mulalira@galaxy-demo.school', role: 'Operations / Procurement', department: 'Procurement', initials: 'RO' },
   Finance: { name: 'Peter Mugisha', email: 'peter.mugisha@galaxy-demo.school', role: 'Finance', department: 'Finance', initials: 'PM' },
   Principal: { name: 'Dr. Andrew Kato', email: 'principal@galaxy-demo.school', role: 'Principal', department: 'Leadership', initials: 'AK' },
   'School Administrator': { name: 'Sarah Namusoke', email: 'sarah.namusoke@galaxy-demo.school', role: 'School Administrator', department: 'Administration', initials: 'SN' },
@@ -410,7 +410,7 @@ const staffRows = [
   { id: 'GIS-ST-001', name: 'Sarah Namusoke', department: 'Administration', role: 'School Administrator', lastLogin: '04 Oct · 03:42 PM', status: 'Active' },
   { id: 'GIS-ST-012', name: 'Mary Akello', department: 'Science', role: 'Department Head', lastLogin: '04 Oct · 02:15 PM', status: 'Active' },
   { id: 'GIS-ST-018', name: 'Peter Mugisha', department: 'Finance', role: 'Finance', lastLogin: '04 Oct · 01:52 PM', status: 'Active' },
-  { id: 'GIS-ST-026', name: 'Robert Ochieng', department: 'Procurement', role: 'Operations / Procurement', lastLogin: '04 Oct · 12:36 PM', status: 'Active' },
+  { id: 'GIS-ST-026', name: 'Achileo Mulalira', department: 'Procurement', role: 'Operations / Procurement', lastLogin: '04 Oct · 12:36 PM', status: 'Active' },
   { id: 'GIS-ST-041', name: 'Grace Atim', department: 'Boarding', role: 'Requester', lastLogin: '01 Oct · 08:11 AM', status: 'Inactive' },
 ]
 
@@ -431,7 +431,7 @@ const budgetRows = [
 const auditRows = [
   { date: '04 Oct 2026', time: '03:42 PM', user: 'Sarah Namusoke', action: 'Updated staff role', record: 'GIS-ST-018', device: 'Chrome · Windows' },
   { date: '04 Oct 2026', time: '02:15 PM', user: 'Peter Mugisha', action: 'Approved finance request', record: 'GIS-REQ-2026-00124', device: 'Edge · Windows' },
-  { date: '04 Oct 2026', time: '12:48 PM', user: 'Robert Ochieng', action: 'Created purchase order', record: 'GIS-PO-0088', device: 'Chrome · Android' },
+  { date: '04 Oct 2026', time: '12:48 PM', user: 'Achileo Mulalira', action: 'Created purchase order', record: 'GIS-PO-0088', device: 'Chrome · Android' },
   { date: '04 Oct 2026', time: '08:32 AM', user: 'Dr. Andrew Kato', action: 'Approved principal request', record: 'GIS-REQ-2026-00125', device: 'Safari · iPhone' },
 ]
 
@@ -445,7 +445,7 @@ function ReportsPage({ onAction }: { onAction: (message: string) => void }) {
   const reportRows = [
     { 'Requisition No.': 'GIS-REQ-2026-00125', Department: 'ICT', Requester: 'Daniel Kato', Status: 'Pending Principal Approval', Amount: 'UGX 28,500,000', 'Requested At': '03 Oct 2026 10:35 AM', 'Approval Time': '21h 57m' },
     { 'Requisition No.': 'GIS-REQ-2026-00124', Department: 'Science', Requester: 'Joseph Mugisha', Status: 'Pending Finance Approval', Amount: 'UGX 1,850,000', 'Requested At': '03 Oct 2026 09:12 AM', 'Approval Time': '18h 42m' },
-    { 'Requisition No.': 'GIS-REQ-2026-00127', Department: 'Sports', Requester: 'Robert Ochieng', Status: 'In Procurement', Amount: 'UGX 3,750,000', 'Requested At': '01 Oct 2026 03:44 PM', 'Approval Time': '12h 08m' },
+    { 'Requisition No.': 'GIS-REQ-2026-00127', Department: 'Sports', Requester: 'Achileo Mulalira', Status: 'In Procurement', Amount: 'UGX 3,750,000', 'Requested At': '01 Oct 2026 03:44 PM', 'Approval Time': '12h 08m' },
     { 'Requisition No.': 'GIS-REQ-2026-00126', Department: 'Administration', Requester: 'Sarah Namusoke', Status: 'Approved', Amount: 'UGX 1,240,000', 'Requested At': '02 Oct 2026 02:08 PM', 'Approval Time': '8h 16m' },
   ]
   return <>
@@ -480,7 +480,7 @@ function GenericManagementPage({ title, onAction }: { title: string; onAction: (
   const configs: Record<string, { subtitle: string; rows: Record<string, any>[]; columns: {key:string;label:string}[]; button: string }> = {
     'Purchase Orders': { subtitle: 'Track authorized purchases from issue through supplier delivery.', button: 'Create purchase order', rows: procurementRows.map((r,i) => ({ po:`GIS-PO-00${88-i}`, supplier:r.supplier, request:r.reference, issued:`0${4-i} Oct 2026`, amount:r.amount, status:i===2?'Awaiting Delivery':'Sent' })), columns:[{key:'po',label:'PO Number'},{key:'supplier',label:'Supplier'},{key:'request',label:'Requisition'},{key:'issued',label:'Issued'},{key:'amount',label:'Amount'},{key:'status',label:'Status'}] },
     Suppliers: { subtitle: 'Compare supplier performance, reliability, delivery speed and purchasing history.', button: 'Add supplier', rows:supplierRows, columns:[{key:'supplier',label:'Supplier'},{key:'category',label:'Category'},{key:'contact',label:'Contact'},{key:'phone',label:'Phone'},{key:'rating',label:'Rating'},{key:'delivery',label:'Avg. delivery'},{key:'status',label:'Status'}] },
-    Departments: { subtitle: 'Department ownership, staffing, budget and requisition performance in one view.', button: 'Add department', rows:budgetRows.map((r,i)=>({ department:r.department, head:['Mary Akello','Daniel Kato','Sarah Namusoke','Robert Ochieng'][i], staff:[12,9,14,8][i], budget:r.allocated, requests:[34,29,41,22][i], status:'Active' })), columns:[{key:'department',label:'Department'},{key:'head',label:'Department head'},{key:'staff',label:'Staff'},{key:'budget',label:'Annual budget'},{key:'requests',label:'Requests'},{key:'status',label:'Status'}] },
+    Departments: { subtitle: 'Department ownership, staffing, budget and requisition performance in one view.', button: 'Add department', rows:budgetRows.map((r,i)=>({ department:r.department, head:['Mary Akello','Daniel Kato','Sarah Namusoke','Achileo Mulalira'][i], staff:[12,9,14,8][i], budget:r.allocated, requests:[34,29,41,22][i], status:'Active' })), columns:[{key:'department',label:'Department'},{key:'head',label:'Department head'},{key:'staff',label:'Staff'},{key:'budget',label:'Annual budget'},{key:'requests',label:'Requests'},{key:'status',label:'Status'}] },
     Notifications: { subtitle: 'Actions, deadlines and escalations that need your attention.', button: 'Mark all as read', rows:[{ notification:'3 requisitions require approval', time:'8 minutes ago', module:'Approvals', status:'Unread'},{notification:'Invoice INV-2026-1038 is overdue',time:'34 minutes ago',module:'Invoices',status:'Unread'},{notification:'ICT budget reached 93%',time:'2 hours ago',module:'Budgets',status:'Unread'},{notification:'PO GIS-PO-0081 delivery received',time:'Yesterday',module:'Procurement',status:'Read'}], columns:[{key:'notification',label:'Notification'},{key:'module',label:'Module'},{key:'time',label:'Time'},{key:'status',label:'Status'}] },
     'Audit Logs': { subtitle: 'An immutable, timestamped record of important user and system actions.', button: 'Export audit log', rows:auditRows, columns:[{key:'date',label:'Date'},{key:'time',label:'Time'},{key:'user',label:'User'},{key:'action',label:'Action'},{key:'record',label:'Record'},{key:'device',label:'Device'}] },
     Settings: { subtitle: 'Configure school profile, workflows, permissions, financial year, notifications and security.', button: 'Save settings', rows:[{setting:'Approval workflows',value:'4 value-based levels',updated:'02 Oct 2026'},{setting:'Financial year',value:'2026 / 2027',updated:'01 Oct 2026'},{setting:'Default currency',value:'UGX',updated:'15 Sep 2026'},{setting:'Approval SLA',value:'24 hours per stage',updated:'12 Sep 2026'}], columns:[{key:'setting',label:'Setting'},{key:'value',label:'Current value'},{key:'updated',label:'Last updated'}] },
