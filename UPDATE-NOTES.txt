@@ -1,0 +1,29 @@
+GALAXY REQUISITION & PROCUREMENT PROTOTYPE - POLISH UPDATE
+
+What was added
+- Persistent desktop sidebar collapse / expand control.
+- Role-aware dashboards retained for Teacher, Department Head, Operations/Procurement, Finance, Principal and Administrator.
+- Procurement queue with demo records and Excel export.
+- Purchase order register.
+- Invoice management workspace and Excel export.
+- Supplier register and performance data.
+- Budget management with utilization progress and threshold alerts.
+- Inventory / Stores register with stock status and Excel export.
+- Staff management register with role/status information and deactivation-safe messaging.
+- Department register.
+- Notifications workspace.
+- Audit log register with Excel export.
+- Management Reports page with report/period/department filters.
+- Browser print layout that removes navigation and prints the report cleanly in landscape.
+- Excel-readable .xls export generated fully in the browser (no backend or extra package required).
+- Responsive tables and module cards for mobile/tablet.
+
+How to apply as a patch
+1. Back up your current app/page.tsx and app/globals.css.
+2. Copy the app folder from this patch into your project and replace those two files.
+3. Run your existing project normally with npm run dev or pnpm dev.
+
+Important
+- This remains front-end demo logic only. Laravel authentication, database persistence and permission enforcement come later.
+- No existing npm dependency was added for Excel export; the browser generates an Excel-readable SpreadsheetML .xls file directly.
+- The current environment could not complete npm dependency installation, so run npm/pnpm install in your existing working project and use npm run build before Vercel deployment.
